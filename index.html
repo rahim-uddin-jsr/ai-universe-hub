@@ -52,6 +52,7 @@
       <!-- header section sort button -->
       <section class="flex justify-center">
         <button
+          onclick="loadData(false)"
           class="btn text-xl sm:btn-sm md:btn-md lg:btn-lg border-0 text-white font-bold bg-primary rounded-2xl"
         >
           Sort By Date
@@ -63,6 +64,14 @@
         id="card-container"
         class="grid lg:grid-cols-3 md:grid-cols-2 gap-5"
       ></section>
+      <section class="flex justify-center">
+        <button id="btn-see-more"
+          onclick="loadData(false)"
+          class="btn text-xl sm:btn-sm md:btn-md my-6 lg:btn-lg border-0 text-white font-bold bg-primary rounded-2xl"
+        >
+          See More
+        </button>
+      </section>
     </main>
     <footer></footer>
     <!-- custom js -->
