@@ -54,7 +54,7 @@ const displayData = (tools) => {
                         </p>
                     </div>
                     <div class="card-actions justify-end text-end">
-                        <button onclick="loadDetails(${id})" class="btn hover:text-white text-primary border-0 hover: rounded-full  bg-secondary"><i class="font-extrabold fa-solid fa-arrow-right"></i></button>
+                        <label for="my-modal-5" onclick="loadDetails(${id})" class="btn btn-circle hover:text-white text-primary border-0  bg-secondary"><i class="font-extrabold fa-solid fa-arrow-right"></i></label>
                     </div>
                 </div>
             </div>
@@ -66,5 +66,20 @@ const displayData = (tools) => {
 };
 
 const displayDetails = (detailsData) => {
-  console.log(detailsData);
+  const {
+    description,
+    pricing,
+    accuracy,
+    features,
+    integrations,
+    image_link,
+    input_output_examples,
+  } = detailsData;
+  const div = document.createElement("div");
+  //   modal start
+  div.innerHTML = `
+      
+      `;
+  // modal end
+  document.getElementById("modal").appendChild(div);
 };

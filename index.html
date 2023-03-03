@@ -49,7 +49,7 @@
   <body class="font-primary">
     <header>
       <h2 class="text-5xl text-center mt-12 mb-8 font-bold">AI Universe Hub</h2>
-      <!-- header section sort button -->
+      <!-- header section sort button section start -->
       <section class="flex justify-center">
         <button
           onclick="loadData(false)"
@@ -58,20 +58,84 @@
           Sort By Date
         </button>
       </section>
+      <!-- header section sort button section end -->
     </header>
     <main class="sm:container mx-auto mt-12">
+      <!-- card container section start -->
       <section
         id="card-container"
         class="grid lg:grid-cols-3 md:grid-cols-2 gap-5"
       ></section>
+      <!-- card container section end -->
+      <!-- show more btn section start  -->
       <section class="flex justify-center">
-        <button id="btn-see-more"
+        <button
+          id="btn-see-more"
           onclick="loadData(false)"
           class="btn text-xl sm:btn-sm md:btn-md my-6 lg:btn-lg border-0 text-white font-bold bg-primary rounded-2xl"
         >
           See More
         </button>
       </section>
+      <!-- show more btn section end  -->
+      <!-- The button to open modal -->
+
+      <div id="modal">
+        <input type="checkbox" id="my-modal-5" class="modal-toggle" />
+        <div class="modal">
+          <div class="modal-box w-11/12 max-w-5xl relative overflow-y-visible">
+            <!-- extra card  -->
+            <div class="flex gap-3 w-full justify-center">
+              <!-- card 1 -->
+              <div class="card w-96 bg-base-100 shadow-xl">
+                <figure>
+                  <img alt="Shoes" />
+                </figure>
+                <div class="card-body">
+                  <h2 class="card-title">
+                    Shoes!
+                    <div class="badge badge-secondary">NEW</div>
+                  </h2>
+                  <p>If a dog chews shoes whose shoes does he choose?</p>
+                  <div class="card-actions justify-end">
+                    <div class="badge badge-outline">Fashion</div>
+                    <div class="badge badge-outline">Products</div>
+                  </div>
+                </div>
+              </div>
+              <!-- card 2 -->
+              <div class="card w-96 bg-base-100 shadow-xl">
+                <figure>
+                  <img
+                    src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                    alt="Shoes"
+                  />
+                </figure>
+                <div class="card-body">
+                  <h2 class="card-title">
+                    Shoes!
+                    <div class="badge badge-secondary">NEW</div>
+                  </h2>
+                  <p>If a dog chews shoes whose shoes does he choose?</p>
+                  <div class="card-actions justify-end">
+                    <div class="badge badge-outline">Fashion</div>
+                    <div class="badge badge-outline">Products</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- extra card  -->
+            <!-- modal close btn  -->
+            <div class="modal-action">
+              <label
+                for="my-modal-5"
+                class="btn border-0 btn-circle btn-sm absolute bg-red-500 top-[-12px] right-[-12px]"
+                >x</label
+              >
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <footer></footer>
     <!-- custom js -->
