@@ -13,6 +13,17 @@ const loadData = (fistSix = true) => {
     });
 };
 loadData();
+const loadDetails = (id) => {
+  let newId;
+  if (id <= 9) {
+    newId = "0" + id;
+  } else {
+    newId = id;
+  }
+  fetch(`https://openapi.programming-hero.com/api/ai/tool/${newId}`)
+    .then((res) => res.json())
+    .then((details) => displayDetails(details.data));
+};
 const displayData = (tools) => {
   //   let Tools = tools.splice(0, 6);
   //   Tools = tools;
@@ -43,7 +54,7 @@ const displayData = (tools) => {
                         </p>
                     </div>
                     <div class="card-actions justify-end text-end">
-                        <button onClick='' class="btn hover:text-white text-primary border-0 hover: rounded-full  bg-secondary"><i class="font-extrabold fa-solid fa-arrow-right"></i></button>
+                        <button onclick="loadDetails(${id})" class="btn hover:text-white text-primary border-0 hover: rounded-full  bg-secondary"><i class="font-extrabold fa-solid fa-arrow-right"></i></button>
                     </div>
                 </div>
             </div>
@@ -52,4 +63,8 @@ const displayData = (tools) => {
     cardContainer.appendChild(div);
     // document.getElementById("card-body").appendChild(ol);
   });
+};
+
+const displayDetails = (detailsData) => {
+  console.log(detailsData);
 };
