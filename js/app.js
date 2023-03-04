@@ -30,22 +30,35 @@ const displayData = (tools) => {
   tools.forEach((tool) => {
     const { id, name, image, features, published_in } = tool;
     const div = document.createElement("div");
-    const ol = document.createElement("ol");
-    ol.setAttribute("id", "feature-container");
-    for (const feature of features) {
+    div.classList.add("card", "bg-base-100", "shadow-xl");
+
+    const figure = document.createElement("figure");
+    figure.classList.add("p-6");
+    figure.innerHTML = `<img src="${image}" alt="Shoes" class="rounded-xl w-[437px] h-[300px]" />`;
+    div.appendChild(figure);
+
+    const cardBody = document.createElement("div");
+    cardBody.classList.add("card-body", "py-0");
+    const cardHeader = document.createElement("h2");
+    cardHeader.classList.add("card-title", "text-2xl");
+    cardHeader.innerText = "Features";
+    cardBody.appendChild(cardHeader);
+
+    const ul = document.createElement("ol");
+    ul.classList.add("list-disc", "ml-5");
+    for (let i = 0; i < features.length; i++) {
+      const feature = features[i];
       const li = document.createElement("li");
       li.innerText = feature;
-      ol.appendChild(li);
+      ul.appendChild(li);
     }
-    div.innerHTML = `
-        <div class="card  bg-base-100 shadow-xl">
-            <figure class="p-6">
-                <img src="${image}" alt="Shoes" class="rounded-xl w-[437px] h-[300px]" />
-            </figure>
-            <div id='card-body' class="card-body">
-                <h2 class="card-title text-2xl">Features</h2>
-                
-                <hr class='my-6'>
+    cardBody.appendChild(ul);
+    div.appendChild(cardBody);
+
+    const cardFooter = document.createElement("div");
+    cardFooter.classList.add("p-6");
+    cardFooter.innerHTML = `
+                <hr class='pb-4'>
                 <div class="flex justify-between items-center">
                     <div >
                         <h2 class="card-title text-2xl mb-4">${name}</h2>
@@ -57,11 +70,11 @@ const displayData = (tools) => {
                         <label for="my-modal-5" onclick="loadDetails(${id})" class="btn btn-circle hover:text-white text-primary border-0  bg-secondary"><i class="font-extrabold fa-solid fa-arrow-right"></i></label>
                     </div>
                 </div>
-            </div>
-        </div>
-      `;
+    `;
+
+    div.appendChild(cardFooter);
+
     cardContainer.appendChild(div);
-    // document.getElementById("card-body").appendChild(ol);
   });
 };
 
@@ -137,18 +150,21 @@ const displayDetails = (detailsData) => {
   const modalCard2 = document.getElementById("modal-card-2");
   modalCard2.textContent = "";
   const image = document.createElement("img");
-  image.classList.add("rounded-lg",'mb-6');
+  image.classList.add("rounded-lg", "mb-6");
   image.src = image_link[0];
   modalCard2.appendChild(image);
-
+  // example question
   const exampleQuestion = document.createElement("h2");
   exampleQuestion.classList.add("text-2xl", "font-bold");
   exampleQuestion.innerText = input_output_examples[0].input;
+
+  // example answer
   const exampleAnswer = document.createElement("p");
   exampleAnswer.classList.add("text-4");
   exampleAnswer.innerText = input_output_examples[0].output;
   modalCard2.appendChild(exampleQuestion);
   modalCard2.appendChild(exampleAnswer);
+
   //modal card 2 end
 
   const footerIntegrationsCard = document.createElement("div");
