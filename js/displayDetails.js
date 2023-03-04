@@ -8,13 +8,12 @@ const displayDetails = (detailsData) => {
     image_link,
     input_output_examples,
   } = detailsData;
-  // console.log(features);
 
-  // card 1 start
-  // card 1 description
+  // details card 1 start
+  //details card 1 description
   document.getElementById("card1Description").innerText = description;
 
-  // card 1 prices start
+  //details card 1 prices start
   const pricesContainer = document.getElementById("pricesContainer");
   pricesContainer.textContent = "";
   if (pricing) {
@@ -30,7 +29,7 @@ const displayDetails = (detailsData) => {
         "font-bold",
         "rounded-lg"
       );
-
+      // details price text style
       let textColor = "text-green-500";
       if (index == 1) {
         textColor = "text-orange-500";
@@ -57,7 +56,8 @@ const displayDetails = (detailsData) => {
         plan: "Enterprise",
         price: "Free of Cost",
       },
-    ];
+      ];
+      
     for (let index = 0; index < freePricing.length; index++) {
       const price = freePricing[index];
       const pricesCard = document.createElement("div");

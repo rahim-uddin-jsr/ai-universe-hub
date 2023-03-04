@@ -3,12 +3,13 @@ const displayData = (tools) => {
     const { id, name, image, features, published_in } = tool;
     const div = document.createElement("div");
     div.classList.add("card", "bg-base-100", "shadow-xl");
-
+    // tools card 1 image
     const figure = document.createElement("figure");
     figure.classList.add("p-6");
     figure.innerHTML = `<img src="${image}" alt="Shoes" class="rounded-xl w-[437px] h-[300px]" />`;
     div.appendChild(figure);
 
+    // tools card body
     const cardBody = document.createElement("div");
     cardBody.classList.add("card-body", "py-0");
     const cardHeader = document.createElement("h2");
@@ -16,6 +17,7 @@ const displayData = (tools) => {
     cardHeader.innerText = "Features";
     cardBody.appendChild(cardHeader);
 
+    //  tools feature list
     const ul = document.createElement("ol");
     ul.classList.add("list-disc", "ml-5");
     for (let i = 0; i < features.length; i++) {
@@ -27,6 +29,7 @@ const displayData = (tools) => {
     cardBody.appendChild(ul);
     div.appendChild(cardBody);
 
+    //   tools card 1 footer
     const cardFooter = document.createElement("div");
     cardFooter.classList.add("p-6");
     cardFooter.innerHTML = `
@@ -45,9 +48,8 @@ const displayData = (tools) => {
     `;
 
     div.appendChild(cardFooter);
-
     cardContainer.appendChild(div);
-
+    // spinner
     handleSpinner(false);
   });
 };

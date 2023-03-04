@@ -1,10 +1,12 @@
-const loadData = (displayAll = false) => {
+const loadData = (displayAll = false, sort=false) => {
   handleSpinner(true);
   fetch("https://openapi.programming-hero.com/api/ai/tools")
     .then((res) => res.json())
     .then((data) => {
       let tools = data.data.tools;
-
+      if (sort) {
+        sortByDate(tools);
+      }
       if (!displayAll) {
         displayData(tools.splice(0, 6));
       } else {

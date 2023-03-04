@@ -5,7 +5,7 @@ loadData();
 
 document.getElementById("header-btn-container").innerHTML = `
         <button
-          onclick="sortIt()"
+          onclick="loadData(true,true)"
           class="btn text-xl sm:btn-sm md:btn-md lg:btn-lg border-0 text-white font-bold bg-primary rounded-2xl"
           >
           Sort By Date
