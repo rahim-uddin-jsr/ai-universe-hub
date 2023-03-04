@@ -1,3 +1,4 @@
+// snipper
 const spinner = document.getElementById("spinner");
 const modalSpinner = document.getElementById("modal-spinner");
 
@@ -9,3 +10,6 @@ function handleSpinner(loading) {
     spinner.classList.add("hidden") || modalSpinner.classList.add("hidden");
   }
 }
+
+// sort by published date
+
