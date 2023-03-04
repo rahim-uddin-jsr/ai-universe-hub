@@ -75,11 +75,65 @@ const displayDetails = (detailsData) => {
     image_link,
     input_output_examples,
   } = detailsData;
-  const div = document.createElement("div");
-  //   modal start
-  div.innerHTML = `
-      
-      `;
+  // console.log(features);
+  const pricesContainer = document.getElementById("pricesContainer");
+  pricesContainer.textContent = "";
+  for (let index = 0; index < pricing.length; index++) {
+    const price = pricing[index];
+    const pricesCard = document.createElement("div");
+    pricesCard.classList.add(
+      "bg-white",
+      "p-2",
+      "flex",
+      "justify-center",
+      "items-center",
+      "font-bold",
+      "rounded-lg"
+    );
+    // card 1 start
+    // card 1 description
+    document.getElementById("card1Description").innerText = description;
+    // card 1 prices start
+    let textColor = "text-green-500";
+    if (index == 1) {
+      textColor = "text-orange-500";
+    } else if (index == 2) {
+      textColor = "text-red-500";
+    }
+
+    pricesCard.innerHTML = `
+    <h3 class='${textColor}'>${price.price}/ </br>${price.plan}</h3>
+    `;
+
+    pricesContainer.appendChild(pricesCard);
+  }
+  // card 1 prices end
+  // feature card
+  const detailsFeatureListContainer =
+    document.getElementById("feature-card-ul");
+  detailsFeatureListContainer.textContent = "";
+  for (const key in features) {
+    const featureItems = features[key];
+    console.log(featureItems);
+    const detailsFeatureList = document.createElement("li");
+    detailsFeatureList.innerText = featureItems.feature_name;
+
+    detailsFeatureListContainer.appendChild(detailsFeatureList);
+  }
+
+  //integrations card
+  const detailsIntegrationsListContainer = document.getElementById(
+    "integrations-card-ul"
+  );
+  detailsIntegrationsListContainer.textContent = "";
+  integrations.forEach((element) => {
+    const detailsIntegrationsList = document.createElement("li");
+    detailsIntegrationsList.innerText = element;
+    detailsIntegrationsListContainer.appendChild(detailsIntegrationsList);
+  });
+
+  const footerIntegrationsCard = document.createElement("div");
+  document.getElementById("card1-Footer");
   // modal end
-  document.getElementById("modal").appendChild(div);
+  // document.getElementById("modal").appendChild(div);
 };
