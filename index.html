@@ -46,9 +46,11 @@
     <!-- css styles  -->
     <link rel="stylesheet" href="styles/style.css" />
   </head>
-  <body class="font-primary">
+  <body class="font-primary relative">
     <header>
-      <h2 class="text-5xl text-center mt-12 mb-8 font-bold">AI Universe Hub</h2>
+      <h2 class="md:text-5xl text-3xl text-center mt-12 mb-8 font-bold">
+        AI Universe Hub
+      </h2>
       <!-- header section sort button section start -->
       <section class="flex justify-center">
         <button
@@ -67,6 +69,11 @@
         class="grid lg:grid-cols-3 md:grid-cols-2 gap-5"
       ></section>
       <!-- card container section end -->
+      <!-- spinner section start -->
+      <section id="spinner" class="flex justify-center">
+        <img class="w-50" src="images/loading-gif.gif" alt="" />
+      </section>
+      <!-- spinner section end -->
       <!-- show more btn section start  -->
       <section class="flex justify-center">
         <button
@@ -83,13 +90,22 @@
       <div id="modal">
         <input type="checkbox" id="my-modal-5" class="modal-toggle" />
         <div class="modal">
-          <div class="modal-box w-11/12 max-w-5xl relative overflow-y-visible">
+          <div
+            class="modal-box sm:w-11/12 w-full max-w-5xl relative md:overflow-y-visible"
+          >
+            <!-- spinner section start -->
+            <section id="modal-spinner" class="flex justify-center">
+              <img class="w-50" src="images/loading-gif.gif" alt="" />
+            </section>
+            <!-- spinner section end -->
             <!-- extra card  -->
-            <div class="flex gap-3 w-full justify-center">
+            <div
+              class="flex flex-col md:flex-row pt-5 gap-y-3 gap-x-3 w-full justify-center items-center"
+            >
               <!-- card 1 -->
               <div
                 id="modal-card-container"
-                class="card p-7 w-[50%] bg-base-100 shadow-xl bg-secondary border-solid border-2 border-primary"
+                class="card p-2 min-h-[511px] max-w-md bg-base-100 shadow-xl bg-secondary border-solid border-2 border-primary"
               >
                 <div class="card-body p-0">
                   <h2 id="card1Description" class="card-title"></h2>
@@ -112,7 +128,7 @@
               </div>
               <!-- card 2 -->
               <div
-                class="card text-center p-7 w-[50%] bg-base-100 shadow-xl border"
+                class="card min-h-[511px] text-center p-7 max-w-md bg-base-100 shadow-xl border"
               >
                 <div id="modal-card-2" class="card-body p-0">
                   <!-- features and integration container end -->
@@ -124,7 +140,7 @@
             <div class="modal-action">
               <label
                 for="my-modal-5"
-                class="btn border-0 btn-circle btn-sm absolute bg-red-500 top-[-12px] right-[-12px]"
+                class="btn border-0 btn-circle btn-sm absolute bg-red-500 top-2 right-5 md:top-[-12px] md:right-[-12px]"
                 >x</label
               >
             </div>
@@ -134,6 +150,7 @@
     </main>
     <footer></footer>
     <!-- custom js -->
+    <script src="js/utilities.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>
