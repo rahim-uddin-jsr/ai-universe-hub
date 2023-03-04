@@ -132,8 +132,26 @@ const displayDetails = (detailsData) => {
     detailsIntegrationsListContainer.appendChild(detailsIntegrationsList);
   });
 
+  // card 1 end
+  //modal card 2 start
+  const modalCard2 = document.getElementById("modal-card-2");
+  modalCard2.textContent = "";
+  const image = document.createElement("img");
+  image.classList.add("rounded-lg",'mb-6');
+  image.src = image_link[0];
+  modalCard2.appendChild(image);
+
+  const exampleQuestion = document.createElement("h2");
+  exampleQuestion.classList.add("text-2xl", "font-bold");
+  exampleQuestion.innerText = input_output_examples[0].input;
+  const exampleAnswer = document.createElement("p");
+  exampleAnswer.classList.add("text-4");
+  exampleAnswer.innerText = input_output_examples[0].output;
+  modalCard2.appendChild(exampleQuestion);
+  modalCard2.appendChild(exampleAnswer);
+  //modal card 2 end
+
   const footerIntegrationsCard = document.createElement("div");
   document.getElementById("card1-Footer");
   // modal end
-  // document.getElementById("modal").appendChild(div);
 };
